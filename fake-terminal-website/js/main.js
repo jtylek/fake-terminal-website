@@ -12,7 +12,7 @@ var configs = (function () {
         }
     };
     Singleton.defaultOptions = {
-        general_help: "Below there's a list of commands that you can use.\nYou can use autofill by pressing the TAB key, autocompleting if there's only 1 possibility, or showing you a list of possibilities.",
+        general_help: "HELP: This is a list of system commands:\nAutofill works by pressing the TAB key, autocompleting if there's only 1 possibility, or showing you a list of possibilities.",
         ls_help: "List information about the files and folders (the current directory by default).",
         cat_help: "Read FILE(s) content and print it to the standard output (screen).",
         whoami_help: "Print the user name associated with the current effective user ID and more info.",
@@ -26,26 +26,26 @@ var configs = (function () {
         rmdir_help: "Remove directory, this command will only work if the folders are empty.",
         touch_help: "Change file timestamps. If the file doesn't exist, it's created an empty one.",
         sudo_help: "Execute a command as the superuser.",
-        welcome: "Welcome to FTW (Fake Terminal Website)! :)\nIn order for you to start customizing the texts, go to js/main.js and replace the texts located at the configs var.\nIn that same file, you can define all the fake files you want as well as their content. This files will appear on the sidenav.\nAlso, don't forget to change the colors on the css/main.css file as well as the website title on the index.html file.\nNow in order to get started, feel free to either execute the 'help' command or use the more user-friendly colored sidenav at your left.\nIn order to skip text rolling, double click/touch anywhere.",
-        internet_explorer_warning: "NOTE: I see you're using internet explorer, this website won't work properly.",
+        welcome: "WARNING! This MAINFRAME belongs to Janusz Tylek.\n PRIVATE PROPERTY. Authorized users & interested parties only.\nUNAUTHORIZED USERS will be infected with RANSOMWARE!\n\nTylux Kernel ver 5.5 Ubuntu 20 LTS r4n$0m.bontnet.war3z\nNote that your IP address and hostname was logged.\nInitializing session...location tracing started.\n\nType HELP for list of available commands or PANIC to stop your location tracking immediately end EXIT.\n",
+        internet_explorer_warning: "NOTE: Internet Explorer is not supported. Get a real browser!",
         welcome_file_name: "welcome_message.txt",
         invalid_command_message: "<value>: command not found.",
-        reboot_message: "Preparing to reboot...\n\n3...\n\n2...\n\n1...\n\nRebooting...\n\n",
+        reboot_message: "Preparing to reboot...\n3...\n2...\n1...\nRebooting...\n\n",
         permission_denied_message: "Unable to '<value>', permission denied.",
-        sudo_message: "Unable to sudo using a web client.",
+        sudo_message: "You performed an ANAUTHORIZED action and will be penilized immediately.\nInstalling RANSOMWARE bot agent............\n................................\nActivating bot ===> Success!\nInitializing tracing deamon on client machine ===> Success!\nBot agent active. Jailshell disabled. Fail2ban disabled. Firewall inactive - all ports open.\n===> We have full access to your computer now! <====\n",
         usage: "Usage",
         file: "file",
         file_not_found: "File '<value>' not found.",
-        username: "Username",
-        hostname: "Host",
-        platform: "Platform",
-        accesible_cores: "Accessible cores",
-        language: "Language",
+        username: "username",
+        hostname: "hostname",
+        platform: "Tylux Kernel ver 6.6.6 fork Ubuntu 20 LTS",
+        accesible_cores: "Available cores",
+        language: "locale",
         value_token: "<value>",
-        host: "example.com",
-        user: "guest",
-        is_root: false,
-        type_delay: 20
+        host: "mainframe.tylek.org",
+        user: "root",
+        is_root: true,
+        type_delay: 2
     };
     return {
         getInstance: function (options) {
@@ -69,9 +69,9 @@ var files = (function () {
     Singleton.defaultOptions = {
         "about.txt": "This website was made using only pure JavaScript with no extra libraries.\nI made it dynamic so anyone can use it, just download it from GitHub and change the config text according to your needs.\nIf you manage to find any bugs or security issues feel free to email me: luisbraganca@protonmail.com",
         "getting_started.txt": "First, go to js/main.js and replace all the text on both singleton vars.\n- configs: All the text used on the website.\n- files: All the fake files used on the website. These files are also used to be listed on the sidenav.\nAlso please notice if a file content is a raw URL, when clicked/concatenated it will be opened on a new tab.\nDon't forget also to:\n- Change the page title on the index.html file\n- Change the website color on the css/main.css\n- Change the images located at the img folder. The suggested sizes are 150x150 for the avatar and 32x32/16x16 for the favicon.",
-        "contact.txt": "mail@example.com",
-        "social_network_1.txt": "https://www.socialite.com/username/",
-        "social_network_2.txt": "https://example.com/profile/9382/"
+        "contact.txt": "You can contact me at:\njtylek@gmailcom\njanusz@tylek.org\nj@epe.si\nhttps://t.me/jtylek",
+        "social_network_1.txt": "https://www.linkedin.com/profiles/jtylek/",
+        "social_network_2.txt": "https://epe.si"
     };
     return {
         getInstance: function (options) {
@@ -452,7 +452,7 @@ var main = (function () {
                 output.innerHTML += isNewLine ? "<br/>" : char;
                 i++;
                 if (!skipped) {
-                    setTimeout(typer, isNewLine ? timer * 2 : timer);
+                    setTimeout(typer, isNewLine ? timer * 100 : timer);
                 } else {
                     output.innerHTML += (text.substring(i).replace(new RegExp("\n", 'g'), "<br/>")) + "<br/>";
                     document.removeEventListener("dblclick", skip);
