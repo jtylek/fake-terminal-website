@@ -1,10 +1,6 @@
-# Fake Terminal Website (FTW)
+# tylek.org
 
-A fully customizable terminal-like-website
-
-## Preview
-
-You can preview a live demo [here](https://luisbraganca.github.io/fake-terminal-website/) with a raw FTW template or [my personal website](http://lbraganca.pt) that also uses this template.
+My personal terminal-like-website based on [here](https://luisbraganca.github.io/fake-terminal-website/).
 
 ### Desktop
 
